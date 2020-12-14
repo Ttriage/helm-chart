@@ -28,7 +28,8 @@ Add this helm chart repo
 
 
 ```
-  helm repo add clarolab-charts https://ttriage.github.io/helm-chart
+helm repo add ttriage-charts https://ttriage.github.io/helm-chart/
+
 ```
 
 It is recommended to overwrite some values before installing the helm chart to adapt the application to your enviroment. This can be done in two ways (See [helm official documentation for more info.](https://helm.sh/docs/chart_template_guide/values_files/)).
