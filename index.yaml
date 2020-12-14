@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  ttriage:
+  - apiVersion: v2
+    created: "2020-12-13T23:35:55.945513754-03:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.7.2
+    description: Ttriage Automated Test Management
+    digest: a6bba7043a1b1e4edade50f41e6f8c4ad5aa2cdbb1d7910a5f90ddf19debf0ff
+    name: ttriage
+    type: application
+    urls:
+    - https://ttriage.github.io/helm-chart/ttriage-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-12-13T23:35:55.935458957-03:00"
