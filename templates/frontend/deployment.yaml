@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ttriage.fullname" . }}-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "ttriage.fullname" . }}-frontend
+  template:
+    metadata:
+      labels:
+        app: {{ include "ttriage.fullname" . }}-frontend
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-frontend
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+          - name: config-front
+            mountPath: /usr/app/config.yml
+            subPath: config.yml
+      volumes:
+      - name: config-front
+        configMap:
+          name: {{ template "ttriage.fullname" . }}
+          items:
+          - key: config
+            path: config.yml
