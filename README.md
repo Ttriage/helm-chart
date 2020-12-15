@@ -44,11 +44,11 @@ A .yaml file called *customvals* containing
 postgresql.enabled=false
 ```
 
-`helm install -f customvals.yaml my-ttriage ttriage `
+`helm install -f customvals.yaml my-ttriage ttriage-charts/ttriage `
 
 2. Passing parameters with --set
 
-`helm install my-ttriage ttriage --set postgresql.enabled=false`
+`helm install my-ttriage ttriage-charts/ttriage --set postgresql.enabled=false`
 
 
 ## Configuration
